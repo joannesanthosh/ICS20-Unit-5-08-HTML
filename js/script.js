@@ -24,8 +24,11 @@ function convert() {
   var addedNumber = 0;
   var answer = firstInteger;
   var remainder = 0
+  if (firstInteger < 0 || secondInteger < 0) {
+    document.getElementById("loop").innerHTML = "Please input a positive integer!"
+    }
   
-    // Process
+    // process
     if (firstInteger > 0 && secondInteger > 0) {
     while (answer >= secondInteger) {
       addedNumber = addedNumber + 1;
@@ -37,7 +40,8 @@ function convert() {
     remainder = 0
     } else if (answer != 0)
     remainder = answer + secondInteger
-  
-  document.getElementById("answer").innerHTML =
-    firstInteger + " ÷ " + secondInteger + " = " + addedNumber + " The remainder is " + remainder;
+
+  // output
+  if (firstInteger > 0 && secondInteger > 0)
+  document.getElementById("answer").innerHTML = irstInteger + " ÷ " + secondInteger + " = " + addedNumber + " The remainder is " + remainder;
 }
