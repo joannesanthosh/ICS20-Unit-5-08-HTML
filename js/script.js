@@ -1,5 +1,5 @@
 /* Created by: Joanne Santhosh
- * Created on: Apr 2022
+ * Created on: May 2022
  * This file contains the JS functions for index.html
  */
 
