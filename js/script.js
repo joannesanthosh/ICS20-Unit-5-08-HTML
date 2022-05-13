@@ -15,20 +15,29 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function allows the user to guess the age
+ * This function does long division through looping
  */
 function convert() {
   // input
-  const dividend = parseInt(document.getElementById("dividend").value);
-  const divisor = parseInt(document.getElementById("divisor").value);
-  var result = 0;
+  const firstInteger = parseInt(document.getElementById("first-integer").value);
+  const secondInteger = parseInt(document.getElementById("second-integer").value);
+  var addedNumber = 0;
+  var answer = firstInteger;
+  var remainder = 0
   
-  // process
-  while(dividend >= divisor){
-  dividend - divisor
-  result++;
-
-  // output
+    // Process
+    if (firstInteger > 0 && secondInteger > 0) {
+    while (answer >= secondInteger) {
+      addedNumber = addedNumber + 1;
+      answer = answer - secondInteger;
+    }
+  }
+  
+    if (answer == 0) {
+    remainder = 0
+    } else if (answer != 0)
+    remainder = answer + secondInteger
+  
   document.getElementById("answer").innerHTML =
-    "The answer is: " + result;
+    firstInteger + " ÷ " + secondInteger + " = " + addedNumber + " The remainder is " + remainder;
 }
