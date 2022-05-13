@@ -27,7 +27,7 @@ function convert() {
   if (firstInteger < 0 || secondInteger < 0) {
     document.getElementById("loop").innerHTML = "Please input a positive integer!"
     }
-  
+
     // process
     if (firstInteger > 0 && secondInteger > 0) {
     while (answer >= secondInteger) {
