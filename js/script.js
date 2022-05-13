@@ -34,14 +34,12 @@ function convert() {
       addedNumber = addedNumber + 1;
       answer = answer - secondInteger;
     }
-  }
-  
-    if (answer == 0) {
+  } if (answer == 0) {
     remainder = 0
     } else if (answer != 0)
     remainder = answer + secondInteger
 
   // output
   if (firstInteger > 0 && secondInteger > 0)
-  document.getElementById("answer").innerHTML = irstInteger + " ÷ " + secondInteger + " = " + addedNumber + " The remainder is " + remainder;
+  document.getElementById("answer").innerHTML = firstInteger + " ÷ " + secondInteger + " = " + addedNumber + " The remainder is " + remainder;
 }
