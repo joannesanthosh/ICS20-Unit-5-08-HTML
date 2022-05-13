@@ -9,22 +9,26 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS20-Unit6-01-PWA/sw.js", {
-    scope: "/ICS20-Unit6-01-PWA/",
+  navigator.serviceWorker.register("/ICS20-Unit-5-08-HTML/sw.js", {
+    scope: "/ICS20-Unit-5-08-HTML/",
   })
 }
 
 /**
- * This function converts the degrees from fahrenheit to celsius
+ * This function allows the user to guess the age
  */
 function convert() {
   // input
-  const fahrenheit = parseInt(document.getElementById("fahrenheit").value)
-
+  const dividend = parseInt(document.getElementById("dividend").value);
+  const divisor = parseInt(document.getElementById("divisor").value);
+  var result = 0;
+  
   // process
-  const celsius = ((fahrenheit - 32) * 5) / 9
+  while(dividend >= divisor){
+  dividend - divisor
+  result++;
 
   // output
-  document.getElementById("celsius").innerHTML =
-    "<p>The  temperature in celsius is: " + celsius.toFixed(2) + "°<p>"
+  document.getElementById("answer").innerHTML =
+    "The answer is: " + result;
 }
