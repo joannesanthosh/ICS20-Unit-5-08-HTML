@@ -19,27 +19,38 @@ if (navigator.serviceWorker) {
  */
 function convert() {
   // input
-  const firstInteger = parseInt(document.getElementById("first-integer").value);
-  const secondInteger = parseInt(document.getElementById("second-integer").value);
-  var addedNumber = 0;
-  var answer = firstInteger;
-  var remainder = 0
+  var total = 0
+  var firstInteger = parseInt(document.getElementById("first-integer").value);
+  var secondInteger = parseInt(document.getElementById("second-integer").value);
+  var remainder = firstInteger
   if (firstInteger < 0 || secondInteger < 0) {
     document.getElementById("loop").innerHTML = "Please input a positive integer!"
     }
 
     // process
     if (firstInteger > 0 && secondInteger > 0) {
-    while (answer >= secondInteger) {
-      addedNumber = addedNumber + 1;
-      answer = answer - secondInteger;
+    while (remainder >= secondInteger) {
+      remainder = remainder - secondInteger;
+      total++
     }
-  } if (answer == 0) {
-    remainder = 0
-    } else if (answer != 0)
-    remainder = answer + secondInteger
+  } else if ((firstInteger < 0) && (secondInteger < 0)) {
+    remainder = Math.abs(remainder)
+    secondInteger = Math.abs(secondInteger)
+    while (remainder >= secondInteger) {
+      remainder = remainder - secondInteger
+      total++
+    }
+  } else {
+    remainder = Math.abs(remainder)
+    secondInteger = Math.abs(secondInteger)
+    while (remainder >= secondInteger) {
+      remainder = remainder - secondInteger
+      total++
+    }
+    total = -Math.abs(total)
+  }
 
   // output
   if (firstInteger > 0 && secondInteger > 0)
-  document.getElementById("answer").innerHTML = firstInteger + " ÷ " + secondInteger + " = " + addedNumber + " The remainder is " + remainder;
+  document.getElementById("answer").innerHTML = firstInteger + " ÷ " + secondInteger + " = " + total + " The remainder is " + remainder
 }
